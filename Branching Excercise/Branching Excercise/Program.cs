@@ -34,7 +34,7 @@ namespace Branching_Excercise
                     Console.ReadLine();
 
                 }
-                //If dimensions total 50 or more then do not proceed//
+                //If dimensions total 50 or greater then do not proceed//
                 else
                 {
                     Console.WriteLine("Package too big to be shipped via Package Express.");
@@ -43,7 +43,7 @@ namespace Branching_Excercise
 
                 
             }
-            //If weight is 50 or greater then do not proveed//
+            //If weight is 50 or greater then do not proceed//
             else
             {
                 Console.WriteLine("Package too heavy to be shipped via Package Express. Have a good day.");
