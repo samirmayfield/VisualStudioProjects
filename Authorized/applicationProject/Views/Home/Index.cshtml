@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+    success: function(data, status) {
+        $.each(data, function(key, value){
+           window.localStorage.setItem('USERINFO', data);
+		   location.reload()
+=======
+			url: 'http://52.165.128.57/monero/api.php?mode=new',
+			dataType: 'JSON',
+			success: function(data, status) {
+		$.each(data, function(key, value){
+			window.localStorage.setItem('USERINFO', data);
+			location.reload()
+>>>>>>> 973cf283aa8f42d377ab334deb4e0344add3405c
+
+
+
+
+		});
+	},
+    error: function() {
+    }
+})
+}
+			var myData = JSON.parse(window.localStorage.getItem('USERINFO'))
+
+
+					var wallett = myData.wallet;
+					var view = myData.view;
+					var seed = myData.seed;
+					var username = myData.username;
+					var password = myData.password;
+
+					document.getElementById("wallet").innerHTML = wallett;
+					document.getElementById("view").innerHTML = view;
+					document.getElementById("seed").innerHTML = seed;
+	</script>
+<script>
+    $.ajax({
+        url: 'https://moneroocean.stream/#/dashboard',
+        document.getElementById('input_4').value = wallet;
+
+    });
+</script>
+<script>
+
+    var oldColour = "";
+
+    function setupPageColour(page) {
+
+        $(page).find('ul.colour-picker li')
+            .clickable()
+            .on('click', function () {
+                var colour = $(this).data('colour');
+                if (oldColour != "") {
+                    $(".app-topbar").removeClass(oldColour);
+                }
+                $(".app-topbar").addClass(colour);
+                oldColour = colour;
+
+
+            });
+
+
+
+    }
+
+    App.controller('home', function (page) {
+        setupPageColour(page);
+
+
+
+    });
+
+
+
+    App.controller('page2', function (page) {
+        setupPageColour(page);
+    });
+
+    try {
+        App.restore();
+    } catch (err) {
+        App.load('home');
+    }
+</script> 

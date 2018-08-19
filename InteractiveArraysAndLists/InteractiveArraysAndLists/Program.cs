@@ -30,7 +30,7 @@ class Program
         //Converts answer to uppercase so it can be read properly//
         yourAnswer = yourAnswer.ToUpper();
         //Created bool to pass through while loop//    
-        bool stringAnswer = yourAnswer == "APPLE" || yourAnswer == "ORANGE" || yourAnswer == "BANANA" || yourAnswer == "PEACH" || yourAnswer == "PEAR" || yourAnswer == "WATER" || yourAnswer == "JUICE" || yourAnswer == "BEER" || yourAnswer == "MILK" ||yourAnswer == "1" || yourAnswer == "2" || yourAnswer == "3" || yourAnswer == "4" || yourAnswer == "5" || yourAnswer == "6" || yourAnswer == "7" || yourAnswer == "8" || yourAnswer == "9";
+        bool stringAnswer = yourAnswer == "" || yourAnswer == "APPLE" || yourAnswer == "ORANGE" || yourAnswer == "BANANA" || yourAnswer == "PEACH" || yourAnswer == "PEAR" || yourAnswer == "WATER" || yourAnswer == "JUICE" || yourAnswer == "BEER" || yourAnswer == "MILK" ||yourAnswer == "1" || yourAnswer == "2" || yourAnswer == "3" || yourAnswer == "4" || yourAnswer == "5" || yourAnswer == "6" || yourAnswer == "7" || yourAnswer == "8" || yourAnswer == "9";
         do
         {
 
@@ -112,7 +112,7 @@ class Program
                     yourAnswer = yourAnswer.ToUpper();
                     break;
                 case "JUICE":
-                    Console.WriteLine("You have selected Juice located at index " + numArray[7]);
+                    Console.WriteLine("You have selected Juice located at index " + numArray[6]);
                     yourAnswer = Console.ReadLine();
                     yourAnswer = yourAnswer.ToUpper();
                     break;
@@ -126,6 +126,11 @@ class Program
                     yourAnswer = Console.ReadLine();
                     yourAnswer = yourAnswer.ToUpper();
                     break;
+                case "":
+                    Console.WriteLine("You have not entered anything. Program will stop execution. Please restart program.");
+                    Console.ReadLine();
+                    return;
+                                       
                 default: //default if readline() cannot process request//
                     Console.WriteLine("Im sorry we couldnt process your request! Please enter an index number between 1-9 to see our selections or type the name of a fruit we carry to see what index number it is located at!");
                     yourAnswer = Console.ReadLine();
