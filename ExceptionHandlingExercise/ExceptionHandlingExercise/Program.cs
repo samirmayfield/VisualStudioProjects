@@ -12,7 +12,7 @@ namespace ExceptionHandling
         {
             try
             {
-                //creating list of integars//
+                //creating list of doubles//
                 List<double> numbers = new List<double>();
                 double[] list = new double[] { 1, 2, 3 };
                 numbers.AddRange(list);
