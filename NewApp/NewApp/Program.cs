@@ -11,7 +11,8 @@ namespace NewApp
         static void Main(string[] args)
         {
             Deck deck = new Deck();
-            deck = Shuffle(deck);
+            //deck = Shuffle(deck);
+            deck = Shuffle(deck, 3);
 
             foreach (Card card in deck.Cards)
             {
@@ -32,6 +33,15 @@ namespace NewApp
                 deck.Cards.RemoveAt(randomIndex);
             }
             deck.Cards = TempList;
+            return deck;
+        }
+
+        public static Deck Shuffle(Deck deck, int times)
+        {
+            for (int i = 0; i < times; i++)
+            {
+                deck = Shuffle(deck);
+            }
             return deck;
         }
     }
