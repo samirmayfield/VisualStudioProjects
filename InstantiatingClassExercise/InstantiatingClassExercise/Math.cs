@@ -29,5 +29,10 @@ namespace InstantiatingClassExercise
             var mathResult = num1 * num2;
             Console.WriteLine(mathResult);
         }
+        public void Nothing(int num1)
+        {
+            var mathResult = num1;
+            Console.WriteLine(mathResult);
+        }
     }
 }
