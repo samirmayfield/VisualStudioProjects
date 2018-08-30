@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 namespace NewApp
 {
-    class Item
+    class Math
     {
-        public Item()
-        {
-            numOne = 1;
-            numTwo = 2;
-        }
         public int numOne { get; set; }
         public int numTwo { get; set; }
+
+        public void Addition()
+        {
+            int result = numOne + numTwo;
+            Console.WriteLine(result);
+        }
+        
     }
 }

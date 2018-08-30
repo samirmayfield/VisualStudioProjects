@@ -9,14 +9,12 @@ namespace NewApp
 {
     class Intlist
     {
-        public Intlist()
+        public void Mylist()
         {
-
+            /*
             Items = new List<Item>();
             //first int
-            List<int> numOne = new List<int>() { 5 };
-            //second int
-            List<int> numTwo = new List<int>() { 8 };
+            int numOne = 5 * 3;
 
             foreach (int num in numOne)
             {
@@ -33,6 +31,7 @@ namespace NewApp
         }
         public List<Item> Cards { get; set; }
         public List<Item> Items { get; private set; }
+        */
+        }
     }
-
 }
