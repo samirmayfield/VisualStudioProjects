@@ -11,14 +11,17 @@ namespace ClassMethodsExercise4
     {
         static void Main(string[] args)
         {
-            Moth Dale = new Moth(); //Instantiating Class Moth//  
+            //Moth Dale = new Moth(); //Instantiating Class Moth//  
             
             Console.WriteLine("Enter an integar");
-            
+            string newString;
             double myAnswer1 = Convert.ToDouble(Console.ReadLine());
-            Dale.Divide(myAnswer1, out double passValue);
-            
-            Console.WriteLine(anotherAnswer);
+            //double mathResult = Dale.Dividing(myAnswer1, out newString );
+            double mathResult = Moth.Dividing(myAnswer1, out newString);
+            Console.WriteLine("Your math result is " + mathResult);
+            Console.WriteLine("I want to let you know..." + newString);
+
+
             Console.ReadLine();
         }
     }

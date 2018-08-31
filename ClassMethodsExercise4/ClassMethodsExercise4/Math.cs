@@ -9,13 +9,18 @@ namespace InstantiatingClassExercise
     class Moth
     {
 
-        public void Divide(double num1,out double anotherAnswer, double num2 = 2)
+        public double Dividing(double num1, out string stringVar)
         {
-            anotherAnswer = 6.7;
+            stringVar = "Good Work!";
+            double num2 = 2;
             double mathResult = num1 / num2;
-            Console.WriteLine(mathResult);
-
             
-        }        
+            return mathResult;
+        }
+        
+    }
+    static class Yes
+    {
+
     }
 }
