@@ -23,15 +23,19 @@ namespace NewApp
             decimal decimal2 = 5.353m;
             string int1 = "3";
             string int2 = "5";
+            int mathResult3 = Dale.Addz(int1, int2);
+            int mathResult2 = Dale.Subby(decimal1, decimal2);
+            int mathResult = Dale.Multy(number1, number2);
+            int mathResult4 = Dale.Nothing(number2);
 
-            //Passing newly created int's through the methods created on on moth class, also labeling int placements as labeled in moth class methods//
+            
 
-            Dale.Multy(num1: number1, num2: number2);     //Passes two ints from list
-            Dale.Nothing(num1: number2);                  //Passing int to nothing method and printing to screen without any changes to the int/
-            Dale.Subby(num1: decimal1, num2: decimal2);    //Passing in decimal, then printing int to screen
-            Dale.Addz(num1: int1, num2: int2);      //Exercise only asking to print number without the math operation
+            
 
-
+            Console.WriteLine(mathResult);
+            Console.WriteLine(mathResult4);
+            Console.WriteLine(mathResult2);
+            Console.WriteLine(mathResult3);
 
             Console.ReadLine();
 
