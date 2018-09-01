@@ -2,7 +2,7 @@
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Inheritance1
+namespace Inheritance2
 {
     public abstract class Person
     {

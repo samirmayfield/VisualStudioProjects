@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Inheritance1
+namespace Inheritance2
 {
     public class Program
     {
@@ -12,12 +12,11 @@ namespace Inheritance1
         {
 
 
-            Employee newEmployee = new Employee();
+            IQuittable newEmployee = new Employee();  //Polymorphic
 
 
-            newEmployee.firstName = "Samir";
-            newEmployee.lastName = "Mayfield";
-            newEmployee.SayName();
+
+            newEmployee.Quit();
 
 
             Console.ReadLine();

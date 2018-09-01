@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Inheritance2;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Inheritance1
+namespace Inheritance2
 {
-    public class Employee : Person
+    public class Employee : Person, IQuittable 
     {
 
         public new void SayName()
@@ -14,5 +15,10 @@ namespace Inheritance1
             Console.WriteLine("Name: " + firstName + " " + lastName);
 
         }
+        public void Quit()
+        {
+            Console.WriteLine("Samir Mayfeld...");
+
+        } 
     }
 }
