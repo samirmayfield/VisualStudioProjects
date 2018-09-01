@@ -23,8 +23,16 @@ namespace Generics1
 
             Jack.things = stringList;
             Jill.things = intList;
-            
 
+            foreach (int i in intList)
+            {
+                Console.WriteLine(i);
+            }
+            foreach (string j in stringList)
+            {
+                Console.WriteLine(j);                
+            }
+            Console.ReadLine();
         }
     }
 }

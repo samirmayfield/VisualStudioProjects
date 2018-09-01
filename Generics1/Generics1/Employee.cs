@@ -8,8 +8,9 @@ namespace Generics1
 {
     class Employee<T> //generic type parameter
     {
-        public List<T> things { get; set; }
-
-
+        public List<T> things { get; set; }      
+        
+        
+        
     }
 }
