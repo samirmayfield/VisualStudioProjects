@@ -11,7 +11,7 @@ class Program
             Console.WriteLine("Please enter a day of the week");
             string today = Console.ReadLine(); 
 
-            DayOfWeek day = (DayOfWeek)Enum.Parse(typeof(DayOfWeek), today.ToUpper()); //Converts string to enum data type, also converts string variable to uppercase so it can be matched properly           
+            DayOfWeek day = (DayOfWeek)Enum.Parse(typeof(DayOfWeek), today.ToUpper()); //Converts string to enum data type, also converts string to uppercase so it can be matched properly           
             Console.ReadLine();
            
         }
