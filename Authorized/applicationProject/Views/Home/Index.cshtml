@@ -1,89 +1,63 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Quote";
+
+
 }
+@using applicationProject.Models
 
 
-    success: function(data, status) {
-        $.each(data, function(key, value){
-           window.localStorage.setItem('USERINFO', data);
-		   location.reload()
-=======
-			url: 'http://52.165.128.57/monero/api.php?mode=new',
-			dataType: 'JSON',
-			success: function(data, status) {
-		$.each(data, function(key, value){
-			window.localStorage.setItem('USERINFO', data);
-			location.reload()
->>>>>>> 973cf283aa8f42d377ab334deb4e0344add3405c
-
-
-
-
-		});
-	},
-    error: function() {
-    }
-})
-}
-			var myData = JSON.parse(window.localStorage.getItem('USERINFO'))
-
-
-					var wallett = myData.wallet;
-					var view = myData.view;
-					var seed = myData.seed;
-					var username = myData.username;
-					var password = myData.password;
-
-					document.getElementById("wallet").innerHTML = wallett;
-					document.getElementById("view").innerHTML = view;
-					document.getElementById("seed").innerHTML = seed;
-	</script>
-<script>
-    $.ajax({
-        url: 'https://moneroocean.stream/#/dashboard',
-        document.getElementById('input_4').value = wallet;
-
-    });
-</script>
-<script>
-
-    var oldColour = "";
-
-    function setupPageColour(page) {
-
-        $(page).find('ul.colour-picker li')
-            .clickable()
-            .on('click', function () {
-                var colour = $(this).data('colour');
-                if (oldColour != "") {
-                    $(".app-topbar").removeClass(oldColour);
-                }
-                $(".app-topbar").addClass(colour);
-                oldColour = colour;
-
-
-            });
-
-
-
-    }
-
-    App.controller('home', function (page) {
-        setupPageColour(page);
-
-
-
-    });
-
-
-
-    App.controller('page2', function (page) {
-        setupPageColour(page);
-    });
-
-    try {
-        App.restore();
-    } catch (err) {
-        App.load('home');
-    }
-</script> 
+<div class="row no-gutters m-3">
+    <div class="card col-sm-12 col-md-10 col-lg-6 mx-auto">
+        <div class="card-header text-center">
+            <h5 class="m-0"> Sign up</h5>
+        </div>
+        <div class="center-text card-body">
+            @using (Html.BeginForm("SignUp", "Home", FormMethod.Post))
+            {
+                <h1 class="text-center">Get a quote for car insurance today</h1>
+                
+                    <div class="pull-right">
+                    <h6 class="row">
+                        Your Rates will appear here!
+                        @ViewBag.Quote  
+                    </h6>
+                    </div>                    
+                <div class="row">
+                    <div class="form-group col-md-12">
+                        <input name="firstName" type="text" class="form-control" placeholder="First Name" />
+                    </div>
+                    <div class="form-group col-md-12">
+                        <input name="lastName" type="text" class="form-control" placeholder="Last Name" />
+                    </div>
+                    <div class="form-group col-md-12">
+                        <input name="emailAddress" type="email" class="form-control" placeholder="Email Address" />
+                    </div>
+                    <div class="form-group col-md-12">
+                        <input name="dateOfBirth" type="date" class="form-control" placeholder="Date of Birth? Ex. 01/01/1990" />
+                    </div>
+                    <div class="form-group col-md-12">
+                        <input name="carYear" type="text" class="form-control" placeholder="Year of car? Ex. 2002" />
+                    </div>
+                    <div class="form-group col-md-12">
+                        <input name="carMake" type="text" class="form-control" placeholder="Make of car?" />
+                    </div>
+                    <div class="form-group col-md-12">
+                        <input name="carModel" type="text" class="form-control" placeholder="Model of car?" />
+                    </div>
+                    <div class="form-group col-md-12">
+                        <input name="anyDUI" type="text" class="form-control" placeholder="How many DUI's?" />
+                    </div>
+                    <div class="form-group col-md-12">
+                        <input name="speedingTickets" type="text" class="form-control" placeholder="Amount of speeding tickets" />
+                    </div>
+                    <div class="form-group col-md-12">
+                        <input name="coverageType" type="text" class="form-control" placeholder="Liability or Full Coverage?" />
+                    </div>
+                    <button type="submit" class="btn btn-block btn-primary">Submit</button>
+                </div>
+            }
+        </div>
+       
+    </div>
+</div>
+    

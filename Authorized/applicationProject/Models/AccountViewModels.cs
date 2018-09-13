@@ -3,9 +3,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace applicationProject.Models
 {
+    
     public class ExternalLoginConfirmationViewModel
     {
-        [Required]
+        [Required] 
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
@@ -79,6 +80,20 @@ namespace applicationProject.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        public class AccountDetails
+        {
+            public int quote { get; set; }
+            public string firstName { get; set; }
+            public string lastName { get; set; }
+
+            public void displayQuote()
+            {
+
+            }
+            
+        }
+       
     }
 
     public class ResetPasswordViewModel
