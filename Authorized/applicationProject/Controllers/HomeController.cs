@@ -74,8 +74,7 @@ namespace InsuranceProject.Controllers
             if (coverageType == "full coverage" || coverageType == "full")
             {
                 quote = Convert.ToInt32(quote * 1.5);
-            }
-            ViewBag.Quote = quote;
+            }            
             
             if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(emailAddress) || string.IsNullOrEmpty(dateOfBirth) || string.IsNullOrEmpty(carYear) || string.IsNullOrEmpty(carMake) || string.IsNullOrEmpty(carModel) || string.IsNullOrEmpty(anyDUI) || string.IsNullOrEmpty(speedingTickets) || string.IsNullOrEmpty(coverageType))
             {
@@ -123,8 +122,12 @@ namespace InsuranceProject.Controllers
                     //closes query
                     connection.Close();
 
+                    ViewBag.firstName = firstName;
+                    ViewBag.lastName = lastName;
+                    ViewBag.emailAddress = emailAddress;
+                    ViewBag.Quote = quote;
 
-                   
+
                 }
                 return View("~/Views/Home/index.cshtml");
             }
