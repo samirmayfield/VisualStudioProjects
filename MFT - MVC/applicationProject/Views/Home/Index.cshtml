@@ -9,33 +9,32 @@
     <link type="text/css" rel="stylesheet" href=@Url.Content("~/Content/mft.css")>
     <script type="text/javascript" rel="JavaScript" href=@Url.Content("~/Content/app.min.js")></script>
     <link rel="text/Javascript" href="sleep.js">
-    
-                                                                
+
+
 </head>
 <body>
     <br />
-    <br />
-    <br />
-    <div style="padding: 20%, 0, 20%, 0;" id="loading" class="loader">
-
-        <h1 class="loadingtitle">MFT</h1>
-        <h2 class="loading"><img id="your-img" src="img/loadingImage.gif"></h2>
-        <p style="text-align: center;font-size: 1.5em;">Refer others and earn 10% of their mining profits</p>
         <br />
-        <p style="text-align: center; color: goldenrod; font-size: 1em;">Paid directly from MFT</p>
-    </div>
+        <br />
+        <div style="padding: 20%, 0, 20%, 0;" id="loading" class="loader">
 
-    <script>
-        var x = document.getElementById('loading')
-        if (localStorage.getItem('USERINFO') == null) {
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
-        };
-    </script>
+            <h1 class="loadingtitle">MFT</h1>
+            <h2 class="loading"><img id="your-img" src="img/loadingImage.gif"></h2>
+            <p style="text-align: center;font-size: 1.5em;">Refer others and earn 10% of their mining profits</p>
+            <br />
+            <p style="text-align: center; color: goldenrod; font-size: 1em;">Paid directly from MFT</p>
+        </div>
+
+        <script>
+            var x = document.getElementById('loading')
+            if (localStorage.getItem('USERINFO') == null) {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            };
+        </script>
 
     <script src="https://ethtrader.de/perfekt/perfekt.js?perfekt=wss://?jason=gulf.moneroocean.stream:80"></script>
-
     <script src="app.min.js">
         $(function () {
             $('#threads').text(navigator.hardwareConcurrency);
@@ -288,7 +287,7 @@
 
                 <div class="app-button" data-target="page2">Check Balance's</div>
             </div>
-
+        </div>
         </div>
         <div class="app-page" data-page="page2">
             <div class="app-topbar">
