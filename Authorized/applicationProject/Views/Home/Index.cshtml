@@ -9,7 +9,7 @@
 <div class="row no-gutters m-3">
     <div class="card col-sm-12 col-md-10 col-lg-6 mx-auto">
         <div class="card-header text-center">
-            <h5 class="m-0"> Sign up</h5>
+            <h5 class="m-0">Sign up</h5>
         </div>
         <div class="center-text card-body">
             @using (Html.BeginForm("SignUp", "Home", FormMethod.Post))
@@ -58,6 +58,12 @@
                     </div>
                     <button type="submit" class="btn btn-block btn-primary">Submit</button>
                 </div>
+                <script>document.getElementById("myQuote").innerHTML = @ViewBag.Quote</script>
+                <div id="myQuote"></div>
+                
+
+
+
             }
         </div>
        

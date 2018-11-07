@@ -47,7 +47,9 @@ namespace InsuranceProject.Controllers
                     //closes query
                     connection.Close();
 
+                    int Quote = 100;
 
+                    ViewBag.newQuote = Quote;
 
                 }
                 return View("Success");

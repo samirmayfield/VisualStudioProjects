@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LambdaExpression
+namespace Lambda_Expressions
 {
-    public class Employee
+    class Employee
     {
-        public int Id { get; set; }
-        public string First { get; set; }
-        public string Last { get; set; }
+        public int ID { get; set; }
+        public string firstName { get; set; }
+        public string lastName { get; set; }
+
     }
 }
